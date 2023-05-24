@@ -19,6 +19,7 @@ MARTECH (TAAG)
 
 Adobe Analytics APIs allow you to directly call Adobe's servers to perform almost any action that you can perform in the user interface. You can create reports to explore, get insights, or answer important questions about your data. You can also manage components of Adobe Analytics, such as the creation of segments or calculated metrics. 
 
+<<<<<<< HEAD
 ![alt_text](github.png "API V1")
 
 ## **Getting started with the Analytics API**
