@@ -1,1 +1,519 @@
 # Adobe-Analytics-API
+<!-----
+
+You have some errors, warnings, or alerts. If you are using reckless mode, turn it off to see inline alerts.
+* ERRORs: 0
+* WARNINGs: 0
+* ALERTS: 29
+
+Conversion time: 6.029 seconds.
+
+
+Using this Markdown file:
+
+1. Paste this output into your source file.
+2. See the notes and action items below regarding this conversion run.
+3. Check the rendered output (headings, lists, code blocks, tables) for proper
+   formatting and use a linkchecker before you publish this page.
+
+Conversion notes:
+
+* Docs to Markdown version 1.0β34
+* Wed May 24 2023 03:03:47 GMT-0700 (PDT)
+* Source doc: Adobe Analytics API - step by step - Kamlesh M
+* This document has images: check for >>>>>  gd2md-html alert:  inline image link in generated source and store images to your server. NOTE: Images in exported zip file from Google Docs may not appear in  the same order as they do in your doc. Please check the images!
+
+
+WARNING:
+You have 2 H1 headings. You may want to use the "H1 -> H2" option to demote all headings by one level.
+
+----->
+
+
+<p style="color: red; font-weight: bold">>>>>>  gd2md-html alert:  ERRORs: 0; WARNINGs: 1; ALERTS: 29.</p>
+<ul style="color: red; font-weight: bold"><li>See top comment block for details on ERRORs and WARNINGs. <li>In the converted Markdown or HTML, search for inline alerts that start with >>>>>  gd2md-html alert:  for specific instances that need correction.</ul>
+
+<p style="color: red; font-weight: bold">Links to alert messages:</p><a href="#gdcalert1">alert1</a>
+<a href="#gdcalert2">alert2</a>
+<a href="#gdcalert3">alert3</a>
+<a href="#gdcalert4">alert4</a>
+<a href="#gdcalert5">alert5</a>
+<a href="#gdcalert6">alert6</a>
+<a href="#gdcalert7">alert7</a>
+<a href="#gdcalert8">alert8</a>
+<a href="#gdcalert9">alert9</a>
+<a href="#gdcalert10">alert10</a>
+<a href="#gdcalert11">alert11</a>
+<a href="#gdcalert12">alert12</a>
+<a href="#gdcalert13">alert13</a>
+<a href="#gdcalert14">alert14</a>
+<a href="#gdcalert15">alert15</a>
+<a href="#gdcalert16">alert16</a>
+<a href="#gdcalert17">alert17</a>
+<a href="#gdcalert18">alert18</a>
+<a href="#gdcalert19">alert19</a>
+<a href="#gdcalert20">alert20</a>
+<a href="#gdcalert21">alert21</a>
+<a href="#gdcalert22">alert22</a>
+<a href="#gdcalert23">alert23</a>
+<a href="#gdcalert24">alert24</a>
+<a href="#gdcalert25">alert25</a>
+<a href="#gdcalert26">alert26</a>
+<a href="#gdcalert27">alert27</a>
+<a href="#gdcalert28">alert28</a>
+<a href="#gdcalert29">alert29</a>
+
+<p style="color: red; font-weight: bold">>>>>> PLEASE check and correct alert issues and delete this message and the inline alerts.<hr></p>
+
+
+
+
+<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image1.png "image_tooltip")
+
+
+
+# **Adobe Analytics API**
+
+
+## 24.04.2023
+
+MARTECH (TAAG)
+
+
+
+**Table of Contents**
+
+
+[TOC]
+
+
+
+# **What is Adobe Analytics API **
+
+Adobe Analytics APIs allow you to directly call Adobe's servers to perform almost any action that you can perform in the user interface. You can create reports to explore, get insights, or answer important questions about your data. You can also manage components of Adobe Analytics, such as the creation of segments or calculated metrics. 
+
+
+## **Getting started with the Analytics API**
+
+There are several steps to take before using the Analytics APIs.
+
+
+
+1. **Permissions: **
+
+    Configure permissions for the developer in the Adobe Admin Console ([https://adminconsole.adobe.com](https://adminconsole.adobe.com/9FA32981641059C00A495FE1@AdobeOrg/overview)).
+
+2. **API Client**: 
+
+    Create an API client in the Adobe Developer Console ([https://developer.adobe.com/console/](https://developer.adobe.com/console/)).
+
+3. **Authentication**: 
+
+    Obtain the necessary credentials to send data to Adobe. Adobe offers two primary methods to authenticate:
+
+1. **OAuth**: Use your own account to authenticate with the API. 
+2. **JWT**: Use a service account to authenticate with the API. 
+3. What’s needed
+1. **<code>api_key</code> </strong>– this is a key that is available once you create an Adobe I/O OAuth client in the Adobe I/O console. For details, see [https://experienceleague.adobe.com/docs/analytics-learn/tutorials/apis/using-postman-to-make-adobe-analytics-2-0-api-requests.html?lang=en](https://experienceleague.adobe.com/docs/analytics-learn/tutorials/apis/using-postman-to-make-adobe-analytics-2-0-api-requests.html?lang=en) .
+2. <strong><code>company_id</code> </strong>– you can get this from the [Swagger interface](https://adobedocs.github.io/analytics-2.0-apis/) ([https://adobedocs.github.io/analytics-2.0-apis/](https://adobedocs.github.io/analytics-2.0-apis/)) for the Adobe Analytics API. Jen explains how to do that starting at the 1:37 mark in [the same video referenced above](https://helpx.adobe.com/analytics/kt/using/postman-analytics-api2-requests-technical-video-use.html).
+3. <strong><code>aa_rsid</code> </strong>– this is just the report suite ID. You can grab this from your website or the plain ol’ Adobe Analytics Admin Console (no fancy Adobe I/O stuff needed for this).
+4. <strong><code>aa_token</code></strong> – this comes from the Analysis Workspace debugger tool. Details on how to enable that are available in [Adobe’s documentation](https://github.com/AdobeDocs/analytics-2.0-apis/blob/master/reporting-tricks.md) ([https://github.com/AdobeDocs/analytics-2.0-apis/blob/master/reporting-tricks.md](https://github.com/AdobeDocs/analytics-2.0-apis/blob/master/reporting-tricks.md)). Follow steps 1 through 6 and then grab the <em>Authorization:</em> value from the <em>CURL REQUEST</em> section of any request you inspect with the little bug icon. This token will expire periodically and will have to be updated in the code. 
+
+
+# <strong>Steps to create Adobe Analytics API</strong>
+
+
+## **1**: Login  to Adobe I/O.
+
+([https://developer.adobe.com/console/home](https://developer.adobe.com/console/home)) make sure you have Admin and Developer Access with Web Services. If not, get the access from your administrator.
+
+
+## **2:** Click, ‘Create a new Project’ under Home Quick Start.
+
+
+
+<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image2.png "image_tooltip")
+
+
+
+## **3:** Click ‘Add API’** **on the Project Screen 1.
+
+
+
+<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image3.png "image_tooltip")
+
+
+
+## **4:** Select Adobe Analytics from the list.
+
+
+
+<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image4.png "image_tooltip")
+
+
+
+## **5:** Select User Authentication **OAuth **on ‘Configure API’ Screen. 
+
+Service Account (JWT) is also a method to integrate, but this post covers **OAuth** only.
+
+
+
+<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image5.png "image_tooltip")
+
+
+
+## **6:** Select Web Auth2.0** **on ‘OAuth 2.0 authentication
+
+And authorization’ screen. Input the Default Redirect URL, Redirect URL pattern and save the configuration.
+
+
+
+* Default Redirect URL : [https://www.adobe.com](https://www.adobe.com/)
+* Redirect URL Pattern : [https://www\.adobe\.com](https://www/.adobe/.com)
+
+
+
+<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image6.png "image_tooltip")
+
+
+
+## **7:** Edit the Project
+
+Once saved, you should see the project under ‘Projects’ Tab. Edit the project and give a Proper Name for your identification (Screen grab 01). Copy _Client ID_ and_ Client Secret _from the OAuth Web (Screen grab 02). The two values (_Client ID_ & _Client Secret_) will be used in the upcoming steps.
+
+
+
+<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image7.png "image_tooltip")
+
+
+
+
+<p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image8.png "image_tooltip")
+
+
+
+## **8: **Open one more tab and login to [Swagger UI](https://adobedocs.github.io/analytics-2.0-apis/). 
+
+([https://adobedocs.github.io/analytics-2.0-apis/](https://adobedocs.github.io/analytics-2.0-apis/))
+
+
+## **9:** Navigate to ‘Users Tab’ and click on **GET** /users/me.
+
+
+
+<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image9.png "image_tooltip")
+
+
+
+## **10:** Click **Try Out** and **Execute**. 
+
+Copy the _Company ID** **_from the Request URL (See below screen grab for reference – Yellow Highlighted). The value (_Company ID_) will be used in the upcoming steps.
+
+
+
+<p id="gdcalert10" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image10.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert11">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image10.png "image_tooltip")
+
+
+
+## **11: **Open Postman and Login 
+
+(If Postman is outdated, please update and then login).
+
+
+## **12: **Create a new ‘Request (GET)’ and add the Request Name. 
+
+For this exercise, have added the Request Name as ‘Adobe Analytics Blog’.
+
+
+
+<p id="gdcalert11" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image11.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert12">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image11.png "image_tooltip")
+
+
+
+## **13:** Click on the Request created
+
+And change the method to ‘**POST**‘ and add the URL to the ‘POST’.
+
+POST URL : https://analytics.adobe.io/api/_Company ID_/reports
+
+The _Company ID_ in the above URL is from Step 11.
+
+
+
+<p id="gdcalert12" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image12.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert13">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image12.png "image_tooltip")
+
+
+
+## **14: **Click on ‘Authorization Tab’ under the ‘POST’ URL
+
+and select OAuth2.0 from the drop down Type. Click ‘Get New Access Token’.
+
+
+
+<p id="gdcalert13" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image13.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert14">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image13.png "image_tooltip")
+
+
+
+## **15:** Input the below values to the ‘Get New Access Token’ pop-up
+
+and request for a token.
+
+
+
+* Token Name : Adobe Analytics 2.0
+* Grant Type : Authorization Code
+* Callback URL : [https://www.adobe.com](https://www.adobe.com/) (Don’t enable Authorize using browser)
+* Auth URL: [https://ims-na1.adobelogin.com/ims/authorize/v1](https://ims-na1.adobelogin.com/ims/authorize/v1)
+* Access Token URL : [https://ims-na1.adobelogin.com/ims/token/v1](https://ims-na1.adobelogin.com/ims/token/v1)
+* Client ID : _Copied from Step 08._
+* Client Secret: _Retrieved and copied from Step 08._
+* Scope: openid,AdobeID,read_organizations,additional_info.projectedProductContext,additional_info.job_function
+* State : _Your State_
+* Client Authentication : Send as Basic Auth Header
+
+
+
+<p id="gdcalert14" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image14.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert15">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image14.png "image_tooltip")
+
+
+
+## **16: **Authenticate 
+
+Once you click ‘Request Token’, you need to authenticate using your Experience Cloud ID credentials. Once token is generated, click on ‘Use Token’ at the top right.
+
+
+
+<p id="gdcalert15" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image15.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert16">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image15.png "image_tooltip")
+
+
+
+## **17:** Click on the ‘Headers Tab’ 
+
+and add the below Key Value pairs.
+
+x-proxy-global-company-id : _Company ID_ copied from Step 11.
+
+x-api-key : _Client ID_ copied from Step 08.
+
+Content-Type : application/json
+
+
+
+<p id="gdcalert16" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image16.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert17">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image16.png "image_tooltip")
+
+
+
+## **18: **Click on ‘Body Tab’ and select ‘raw’. 
+
+Here is where we need to add the request.
+
+
+
+<p id="gdcalert17" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image17.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert18">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image17.png "image_tooltip")
+
+
+
+## **19:** Go to Workspace and open a new Project. 
+
+Click the ‘Help’ section inside the Workspace section (Not the Analytics section at the top) and ‘Enable Debugger’.
+
+
+
+<p id="gdcalert18" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image18.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert19">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image18.png "image_tooltip")
+
+
+
+## **20:** click on the Free Form Table under the Oberon Icon.
+
+The browser will force reload after the pop-up confirmation on enabling debugger. 
+
+After reload, you should see the below ‘Oberon Icon’ on your Free Form Table. Build your Free Form and click on the Free Form Table under the Oberon Icon.
+
+
+
+<p id="gdcalert19" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image19.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert20">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image19.png "image_tooltip")
+
+
+
+## **21:** Copy the JSON Request from the ‘Oberon XML Tab’ once opened.
+
+
+
+<p id="gdcalert20" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image20.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert21">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image20.png "image_tooltip")
+
+
+
+## **22:** Paste the request to the Postman ‘Body Tab
+
+’ i.e. raw (Step 19) and send the request.
+
+
+## **23:** You should now be able to see the response
+
+ that should match the data you have seen in the Workspace.
+
+
+
+<p id="gdcalert21" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image21.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert22">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image21.png "image_tooltip")
+
+
+Now our Adobe Analytics API is working and also it can bring data from Adobe analytics so let's use this data into a dashboard using a business intelligence tool like Google Looker studio.
+
+
+## **24:** Go to Looker studio and create a new report. 
+
+[https://lookerstudio.google.com/navigation/reporting](https://lookerstudio.google.com/navigation/reporting) 
+
+
+
+<p id="gdcalert22" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image22.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert23">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image22.png "image_tooltip")
+
+
+
+## **25:** Lets use Adobe Analytics 2.0 as a data source . 
+
+Click on Adobe Analytics 2.0
+
+
+
+<p id="gdcalert23" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image23.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert24">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image23.png "image_tooltip")
+
+
+
+## **26:** Click on Authorise 
+
+
+
+<p id="gdcalert24" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image24.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert25">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image24.png "image_tooltip")
+
+
+
+## **27:** Click on Start to connect to Adobe Analytics 2.0
+
+
+
+<p id="gdcalert25" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image25.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert26">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image25.png "image_tooltip")
+
+
+
+## **28:** Click on Connect with oAuth (Valid for 2 weeks only) and login
+
+
+
+<p id="gdcalert26" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image26.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert27">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image26.png "image_tooltip")
+
+
+
+## **29:** Fill the parameter and click on ADD.
+
+
+
+<p id="gdcalert27" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image27.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert28">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image27.png "image_tooltip")
+
+
+
+## **30:** Click on Add to report
+
+
+
+<p id="gdcalert28" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image28.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert29">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image28.png "image_tooltip")
+
+
+
+## **31:** Select date range and dimension as a page
+
+and occurrences as one metric.
+
+
+
+<p id="gdcalert29" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image29.jpg). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert30">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/image29.jpg "image_tooltip")
+
+
+Hurray, I have now successfully created my first Adobe Analytics API 2.0 Request.
